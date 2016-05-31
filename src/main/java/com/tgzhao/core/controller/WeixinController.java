@@ -10,13 +10,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by tgzhao on 16/5/27.
+ * Created by tgzhao on 16/5/28.
  */
-
 @Controller
-@RequestMapping("/")
-public class MobileController {
-
+@RequestMapping("/weixin")
+public class WeixinController {
     @Autowired
     private MobileDefinition mobileDefinition;
     public MobileDefinition getMobileDefinition() {
@@ -24,7 +22,7 @@ public class MobileController {
     }
 
     @ResponseBody
-    @RequestMapping("/do")
+    @RequestMapping("/getservice")
     public Object service(@RequestParam(value = "service", required = false) String service,
                           @RequestParam(value = "data", required = false) String data, HttpServletRequest request) {
 
@@ -32,6 +30,11 @@ public class MobileController {
         String da = data;
         HttpServletRequest req = request;
         MobileDefinition mobileDefinition11 = getMobileDefinition();
-        return mobileDefinition11.getKtvAvatar().toString(); // "hello world";
+        System.out.println(mobileDefinition11.getKtvAvatar());
+        System.out.println("测试编码");
+        System.out.println(service);
+        String aaaa = mobileDefinition11.getKtvAvatar();
+        return mobileDefinition11;
+//        return aaaa + mobileDefinition11.getKtvAvatar().toString() + "weixin service~~测试编码" + service; // "hello world";
     }
 }

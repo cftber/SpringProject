@@ -11,11 +11,14 @@
         </property>
     </bean>
 
-    <bean id="mobiledef" class="com.tgzhao.core.common.MobileDefinition">
+    <bean id="mobileDefinition" class="com.tgzhao.core.common.MobileDefinition">
         <property name="ktvHost" value="${ktv.host}" />
         <property name="discountUrl" value="${discount.url}" />
         <property name="uploadRoot" value="${ktv.host}" />
         <property name="socketHost" value="${ktv.host}" />
         <property name="ktvAvatar" value="${ktv.host}" />
+    </bean>
+
+    <bean id="injectStr" class="java.lang.String">
     </bean>
 </beans>
